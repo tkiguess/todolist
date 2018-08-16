@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Add Task</title>
+</head>
+<body>
+<H1>Add Task</H1>
+
+<form  action="#" th:action="@{/process2}"
+       th:object="${todo}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    <mark><strong>
+    <span th:if="${#fields.hasErrors('task')}"
+          th:errors="*{task}">Task Error</span>
+        <textarea id="task" placeholder="Task"
+                  th:field="*{task}"
+                  row="3"/><br />
+    </strong></mark>
+    <button type="submit" class="btn bnt-default">Submit</button>
+</form>
+</body>
+</html>
