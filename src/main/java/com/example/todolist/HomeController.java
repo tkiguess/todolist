@@ -80,7 +80,9 @@ public class HomeController {
         return user;
     }
     @RequestMapping("/")
-    public  String index(){
+    public  String index(Model model){
+
+        model.addAttribute("todos", todoRepository.findAll());
         return "index";
     }
 

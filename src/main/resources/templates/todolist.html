@@ -9,18 +9,18 @@
 
 <table class="table">
 
-    <tr>
-        <th>Tasks</th>
-        <a href="/add">Add task</a>
-    </tr>
-    <tr th:each="todo : ${todos}">
-        <td th:text="${todo.task}"></td>
+<tr>
+    <th>Tasks</th>
+    <a href="/add">Add task</a>
+</tr>
+<tr th:each="todo : ${todos}">
+    <td th:text="${todo.task}"></td>
 
-        <td>
-            <a th:href="@{/update/{id}(id=${todo.id})}">Update</a>
-            <a th:href="@{/delete/{id}(id=${todo.id})}">Delete</a>
-        </td>
-    </tr>
+    <td>
+        <a th:href="@{/update/{id}(id=${todo.id})}">Update</a>
+        <a th:href="@{/delete/{id}(id=${todo.id})}">Delete</a>
+    </td>
+</tr>
 </table>
 
 <a href="/login"> Logout</a>

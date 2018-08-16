@@ -7,6 +7,18 @@
 </head>
 <body>
 <h2>Welcome to yout todo list, lets get started</h2>
+<table class="table">
+<tr>
+    <th>Tasks</th>
+    <a href="/add">Add task</a>
+</tr>
+<tr th:each="todo : ${todos}">
+    <td th:text="${todo.task}"></td>
+    <td>
+
+    </td>
+</tr>
+</table>
 <a href="/todolist">Lets get started.</a>
 </body>
 </html>
