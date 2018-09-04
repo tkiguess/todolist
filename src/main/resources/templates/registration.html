@@ -4,34 +4,77 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <link href="https://bootswatch.com/4/lumen/bootstrap.min.css" rel="stylesheet" type="text/css">
 </head>
+<style>
+
+    input[type=text] {
+        background-color: #53D353;
+        color: white;
+        border: 2px solid #2FAE34;
+        border-radius: 2px;
+    }
+    input[type=text]:focus {
+        background-color: #9FED9F;
+    }
+
+    input[type=password] {
+        background-color: #53D353;
+        color: white;
+        border: 2px solid #2FAE34;
+        border-radius: 2px;
+    }
+    input[type=password]:focus {
+        background-color: #9FED9F;
+    }
+
+    form  { display: table;      }
+    p     { display: table-row;  }
+    label { display: table-cell; }
+    input { display: table-cell; }
+</style>
+
 <body>
-<h4>
-    New User Registration
-</h4>
+<div align="center">
+    <div style="padding: 8px;">
+
+    <div class="card text-white bg-success mb-3" style="max-width: 400px; ">
+        <div class="card-header"><h1>Register</h1></div>
+        <div class="card-body">
+            <p class="card-text">
+
 <form autocomplete="off" action="#" th:action="@{/register}" th:object="${user}" method="post">
-    First Name <mark><strong><span th:if="${#fields.hasErrors('firstName')}"
-                th:errors="*{firstName}"> First Name Error</span></strong></mark>
+    First Name <span th:if="${#fields.hasErrors('firstName')}"
+                th:errors="*{firstName}"> First Name Error</span>
     <input type="text" id="firstName" placeholder="First Name" th:field="*{firstName}"/><br/>
 
-    Last Name <mark><strong><span th:if="${#fields.hasErrors('lastName')}"
-                th:errors="*{lastName}"> Last Name Error</span></strong></mark>
+    Last Name <span th:if="${#fields.hasErrors('lastName')}"
+                th:errors="*{lastName}"> Last Name Error</span>
     <input type="text" id="lastName" placeholder="Last Name" th:field="*{lastName}"/><br/>
 
-    Email<mark><strong><span th:if="${#fields.hasErrors('email')}"
-                th:errors="*{email}"> Email Error</span></strong></mark>
+    Email<span th:if="${#fields.hasErrors('email')}"
+                th:errors="*{email}"> Email Error</span>
     <input type="text" id="email" placeholder="email" th:field="*{email}"/><br/>
 
-    UserName <mark><strong><span th:if="${#fields.hasErrors('username')}"
-                th:errors="*{username}"> UserName Error</span><br/></strong></mark>
+    UserName <span th:if="${#fields.hasErrors('username')}"
+                th:errors="*{username}"> UserName Error</span><br/>
     <input type="text" id="username" placeholder="UserName" th:field="*{username}"/><br/>
 
-    Password<mark><strong><span th:if="${#fields.hasErrors('password')}"
-                th:errors="*{password}"> First Name Error</span><br/></strong></mark>
+    Password<span th:if="${#fields.hasErrors('password')}"
+                th:errors="*{password}"> First Name Error</span><br/>
     <input type="text" id="password" placeholder="Password" th:field="*{password}"/><br/>
 
-    <button type="submit" class="btn btn-default">Submit</button>
+    <button type="submit" class="btn btn-success btn-lg btn-block" >Register</button>
 
 </form>
+</div>
+        </p>
+    </div>
+    <a href="/login" font color="white">Already have an account?</a>
+</div>
+</div>
 </body>
 </html>

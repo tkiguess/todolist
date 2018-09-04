@@ -13,7 +13,9 @@ public class Todo {
     private long Id;
 
     private String task;
+    private String notes;
     private String username;
+
 
     public long getId() {
         return Id;
@@ -37,5 +39,13 @@ public class Todo {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
     }
 }

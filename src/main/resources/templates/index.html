@@ -4,21 +4,32 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <link href="https://bootswatch.com/4/lumen/bootstrap.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<h2>Welcome to yout todo list, lets get started</h2>
-<table class="table">
-<tr>
-    <th>Tasks</th>
-    <a href="/add">Add task</a>
-</tr>
-<tr th:each="todo : ${todos}">
-    <td th:text="${todo.task}"></td>
-    <td>
+<div align="center" style="padding: 8px;" >
+    <div style="max-width: 600px;">
 
-    </td>
-</tr>
-</table>
-<a href="/todolist">Lets get started.</a>
+    <h2>Welcome to Simple Pad</h2>
+    <p>This is a demo app, created to show an understanding of Spring Boot. As you will see,
+    this app is typically slow, that's because there is not much Javascript implemented,
+        which means its less interactive and everything is being pulled from the servers.</p>
+
+    <p>This app was themed using Bootstrap, and is being hosted on a Heroku server. This is to demonstrate
+    back end development,that's why it doesn't look fancy. Also for optimal experience using the app, try it on
+    a mobile device, its designed for it. Click the button below to:</p>
+
+
+
+
+    <form></form>
+    <a href="/todolist" class="btn btn-success btn-lg" >Get Started</a>
+
+    </div>
+    </div>
 </body>
 </html>

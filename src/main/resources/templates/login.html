@@ -3,15 +3,68 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Spring Security Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <link href="https://bootswatch.com/4/lumen/bootstrap.min.css" rel="stylesheet" type="text/css">
 </head>
+<style>
+    input[type=text] {
+        background-color: #53D353;
+        color: white;
+        border: 2px solid #2FAE34;
+        border-radius: 2px;
+    }
+    input[type=text]:focus {
+        background-color: #9FED9F;
+    }
+
+    input[type=password] {
+        background-color: #53D353;
+        color: white;
+        border: 2px solid #2FAE34;
+        border-radius: 2px;
+    }
+    input[type=password]:focus {
+        background-color: #9FED9F;
+    }
+
+
+    form  { display: table;      }
+    p     { display: table-row;  }
+    label { display: table-cell; }
+    input { display: table-cell; }
+
+
+</style>
 <body>
+<div style="padding: 8px;">
+<div align="center">
+
+    <div class="card text-white bg-success mb-3" style="max-width: 400px; ">
+        <div class="card-header"><h1>Login</h1></div>
+        <div class="card-body">
+            <p class="card-text">
+
+
 <div th:if="${param.error}">Invalid username and password</div>
 <div th:if="${param.logout}">You have been logged out.</div>
 <form th:action="@{/login}" method="post">
-    <div><labe>User Name: <input type="text" name="username"/></labe></div>
-    <div><label>Password: <input type="password" name="password"/></label></div>
-    <div><input type="submit" value="Sign In"/></div>
-    <a href="/register">Dont have an account yet?</a>
+    <p><label for="a">User Name: </label> <input id="a" type="text" name="username"/></p>
+
+    <p><label for="b">Password: </label><input id="b" type="password" name="password"/></p>
+    <br/>
+    <input type="submit" value="Sign In" class="btn btn-success btn-lg btn-block"/>
+
 </form>
+            <p> Try "jim" or "bob" for username, <br/>
+                and "password" for any one of their's password. </p>
+
+    </p>
+</div>
+</div>
+    <a href="/register" font color="white">Dont have an account yet?</a>
+</div>
+</div>
 </body>
 </html>

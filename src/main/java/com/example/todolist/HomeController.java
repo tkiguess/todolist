@@ -56,12 +56,19 @@ public class HomeController {
         return "redirect:/todolist";
     }
 
+    @RequestMapping("/detail/{id}")
+    public String showJob(@PathVariable("id") long id, Model model){
+        model.addAttribute("todo", todoRepository.findById(id).get());
+        return "show";
+    }
 
     @GetMapping("/add")
     public String addTodo(Model model){
         model.addAttribute("todo", new Todo());
         return "add";
     }
+
+
     @PostMapping("/process2")
     public String processForm( @ModelAttribute Todo todo, BindingResult result, Model model)
     {
@@ -86,9 +93,20 @@ public class HomeController {
         return "index";
     }
 
+    @RequestMapping("/maintenance")
+    public  String windex(Model model){
+
+        return "maintenance";
+    }
+
     @RequestMapping("/login")
     public String login(){
         return "login";
+    }
+
+    @RequestMapping("/logout2")
+    public String logout2() {
+        return "logoutout";
     }
 
     @RequestMapping("/todolist")

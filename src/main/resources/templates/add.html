@@ -3,21 +3,39 @@
 <head>
     <meta charset="UTF-8" />
     <title>Add Task</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <link href="https://bootswatch.com/4/lumen/bootstrap.min.css" rel="stylesheet" type="text/css">
 </head>
-<body>
-<H1>Add Task</H1>
 
-<form  action="#" th:action="@{/process2}"
-       th:object="${todo}" method="post">
+<body>
+<div align="center">
+<div style="padding: 8px;">
+
+    <div class="card border-danger mb-3" style="max-width: 400px; ">
+        <div class="card-header"><h3>Add</h3></div>
+        <div class="card-body">
+            <p class="card-text">
+
+<form  action="#" th:action="@{/process2}" th:object="${todo}" method="post">
     <input type="hidden" th:field="*{id}" />
-    <mark><strong>
+
     <span th:if="${#fields.hasErrors('task')}"
           th:errors="*{task}">Task Error</span>
-        <textarea id="task" placeholder="Task"
-                  th:field="*{task}"
-                  row="3"/><br />
-    </strong></mark>
-    <button type="submit" class="btn bnt-default">Submit</button>
+
+   <div align="left"> <label for="task">Title: </label></div>
+    <input id="task" placeholder="Task" th:field="*{task}" /><br />
+
+    <div align="left"> <label for="notes">Notes: </label></div>
+    <textarea id="notes" placeholder="Notes" th:field="*{notes}" style="height:200px; width: 200px;"/><br/>
+            <button type="submit" class="btn btn-danger btn-lg " >Add</button>
+            <a href="/todolist" class="btn btn-danger btn-lg" >Cancel</a>
 </form>
+            </p>
+        </div>
+</div>
+</div>
+</div>
 </body>
 </html>
