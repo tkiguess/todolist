@@ -35,7 +35,7 @@
             <tr>
                 <td><div align="left"> <a href="/todolist" class="btn btn-warning btn-lg">Back</a></div></td>
                 <td><div align="center"> <h3><span th:text="${todo.task}" ></span></h3></div></td>
-                <td><div align="right"> <a href="/maintenance" class="btn btn-warning btn-lg">Edit</a></div></td>
+                <td><div align="right"> <a th:href="@{/delete/{id}(id=${todo.id})}" class="btn btn-warning btn-lg">Remove</a></div></td>
             </tr>
 
         </table></div>
@@ -46,9 +46,7 @@
 <span th:text="${todo.notes}" ></span><br />
 
 <!--<a th:href="@{/Update/{id}(id=${todo.id})}">Edit</a>-->
-<div align="left">
-                <a th:href="@{/delete/{id}(id=${todo.id})}" class="btn btn-warning btn-lg">Remove</a>
-        </div>
+
 </div>
         </p>
     </div>
